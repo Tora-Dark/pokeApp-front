@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react";
 import { NextUIProvider } from "@nextui-org/system";
+import { AxiomWebVitals } from "next-axiom";
 import "./globals.css";
-import AuthButton from "@/components/auth/AuthButton";
 import NextAuthProvider from "@/app/context/NextAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +24,7 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
+        <AxiomWebVitals />
         <NextAuthProvider>
           <NextUIProvider>{children}</NextUIProvider>
         </NextAuthProvider>
