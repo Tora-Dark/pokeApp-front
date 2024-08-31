@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+import { withAxiom } from "next-axiom";
+
+const nextConfig = withAxiom({
   images: {
     remotePatterns: [
       {
@@ -13,6 +16,6 @@ const nextConfig = {
     GITHUB_APP_CLIENT_SECRET: process.env.GITHUB_APP_CLIENT_SECRET,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   },
-};
+});
 
 export default nextConfig;
