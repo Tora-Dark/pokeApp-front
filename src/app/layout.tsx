@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { ThemeModeScript } from "flowbite-react";
 import { NextUIProvider } from "@nextui-org/system";
 import "./globals.css";
+import AuthButton from "@/components/auth/AuthButton";
+import NextAuthProvider from "@/app/context/NextAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +24,9 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextAuthProvider>
+          <NextUIProvider>{children}</NextUIProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );
