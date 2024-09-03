@@ -24,9 +24,11 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
-        <AxiomWebVitals />
         <NextAuthProvider>
-          <NextUIProvider>{children}</NextUIProvider>
+          <NextUIProvider>
+            <AxiomWebVitals />
+            {children}
+          </NextUIProvider>
         </NextAuthProvider>
       </body>
     </html>
