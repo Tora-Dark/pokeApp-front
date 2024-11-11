@@ -27,7 +27,10 @@ export default function RootLayout({
         <NextAuthProvider>
           <NextUIProvider>
             <AxiomWebVitals />
+            <div className="bg-slate-200">
+
             {children}
+            </div>
           </NextUIProvider>
         </NextAuthProvider>
       </body>
